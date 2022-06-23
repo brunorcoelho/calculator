@@ -1,15 +1,6 @@
 const visor = document.getElementById("result");
 const clear = document.getElementById("clear");
-const zero = document.getElementById("zero");
-const one = document.getElementById("one");
-const two = document.getElementById("two");
-const three = document.getElementById("three");
-const four = document.getElementById("four");
-const five = document.getElementById("five");
-const six = document.getElementById("six");
-const seven = document.getElementById("seven");
-const eight = document.getElementById("eight");
-const nine = document.getElementById("nine");
+const numbers = document.getElementsByClassName("numbers");
 const divideButton = document.getElementById("divide");
 const multiplyButton = document.getElementById("multiply");
 const addButton = document.getElementById("add");
@@ -22,16 +13,9 @@ let operationToDo = "";
 let result;
 
 clear.addEventListener("click", clearEverything);
-zero.addEventListener("click", addToVisor);
-one.addEventListener("click", addToVisor);
-two.addEventListener("click", addToVisor);
-three.addEventListener("click", addToVisor);
-four.addEventListener("click", addToVisor);
-five.addEventListener("click", addToVisor);
-six.addEventListener("click", addToVisor);
-seven.addEventListener("click", addToVisor);
-eight.addEventListener("click", addToVisor);
-nine.addEventListener("click", addToVisor);
+Array.from(numbers).forEach(function (number) {
+  number.addEventListener("click", addToVisor);
+});
 divideButton.addEventListener("click", operationSelect);
 multiplyButton.addEventListener("click", operationSelect);
 addButton.addEventListener("click", operationSelect);
