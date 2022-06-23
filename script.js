@@ -31,6 +31,9 @@ function addToVisor() {
 }
 
 function operationSelect() {
+  if (result != undefined) {
+    result = undefined;
+  }
   firstNum = parseInt(visor.innerHTML);
 
   switch (this.innerHTML) {
