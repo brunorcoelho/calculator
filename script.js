@@ -24,8 +24,8 @@ eight.addEventListener("click", addToVisor);
 nine.addEventListener("click", addToVisor);
 
 function addToVisor() {
-  var numberToAdd = document.createTextNode(this.innerHTML);
-  visor.appendChild(numberToAdd);
+  var numberToAdd = this.innerHTML;
+  visor.insertAdjacentHTML("beforeend", numberToAdd);
 }
 
 function clearVisor() {
