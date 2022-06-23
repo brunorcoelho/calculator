@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;500&display=swap");
+
+body {
+  font-family: "Work Sans", sans-serif;
+  height: 100vh;
+  background-image: url(./background.jpeg);
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  width: 290px;
+  box-shadow: 5px 5px 20px 8px rgba(0, 0, 0, 0.47);
+  border-radius: 10px;
+}
+
+.calculator-visor {
+  background-color: rgba(90, 90, 90, 0.9);
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.control-buttons {
+  margin: 9px 0px 0px 9px;
+}
+.control-buttons button {
+  border-radius: 50%;
+  border: 0.1px solid black;
+  width: 15px;
+  height: 15px;
+  align-self: flex-start;
+  justify-self: start;
+}
+.close {
+  background-color: #fe5f57;
+}
+.minimize {
+  background-color: #f0b23d;
+}
+.expand {
+  background-color: #30bd44;
+}
+
+.result {
+  margin: 0;
+  align-self: flex-end;
+  margin: 0 10px 0px 0;
+  font-size: 50px;
+  color: #efefef;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 200;
+}
+
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  height: 399px;
+}
+
+.calculator-buttons button {
+  padding: 0;
+  border: 0.1px solid #5a5a5a;
+}
+
+.operation {
+  background-color: #ff9f0b;
+}
+
+.numbers {
+  background-color: #848484;
+}
+button:active.numbers {
+  background-color: #a6a6a6;
+}
+
+button:active.operation {
+  background-color: #ac6905;
+}
+
+#zero {
+  grid-area: 5 / 1 / 5 / 4;
+  border-bottom-left-radius: 10px;
+}
+
+.clear {
+  grid-area: 1 / 1 / 1 / 4;
+  background-color: #6c6c6c;
+}
+
+button:active.clear {
+  background-color: #a6a6a6;
+}
+button:active.close {
+  background-color: #fd8d85;
+}
+
+button:active.minimize {
+  background-color: #ffea5c;
+}
+
+button:active.expand {
+  background-color: #55f46d;
+}
+
+#equals {
+  border-bottom-right-radius: 10px;
+}
