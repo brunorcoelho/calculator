@@ -57,6 +57,9 @@ function operationSelect() {
 }
 
 function doOperation() {
+  if (result != undefined) {
+    return;
+  }
   secondNum = parseInt(visor.innerHTML);
   clearVisor();
   result = operate(operationToDo, firstNum, secondNum);
