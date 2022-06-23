@@ -71,6 +71,10 @@ body {
   border: 0.1px solid #5a5a5a;
 }
 
+.operation-active {
+  border: 1px solid black !important;
+}
+
 .operation {
   background-color: #ff9f0b;
 }
