@@ -16,9 +16,10 @@ const addButton = document.getElementById("add");
 const subtractButton = document.getElementById("subtract");
 const equalsButton = document.getElementById("equals");
 
-let firstNum = 0;
-let secondNum = 0;
+let firstNum;
+let secondNum;
 let operationToDo = "";
+let result;
 
 clear.addEventListener("click", clearEverything);
 zero.addEventListener("click", addToVisor);
@@ -38,6 +39,9 @@ subtractButton.addEventListener("click", operationSelect);
 equalsButton.addEventListener("click", doOperation);
 
 function addToVisor() {
+  if (result != undefined) {
+    clearEverything();
+  }
   var numberToAdd = this.innerHTML;
   visor.insertAdjacentHTML("beforeend", numberToAdd);
 }
@@ -68,7 +72,8 @@ function operationSelect() {
 function doOperation() {
   secondNum = parseInt(visor.innerHTML);
   clearVisor();
-  visor.innerHTML = operate(operationToDo, firstNum, secondNum);
+  result = operate(operationToDo, firstNum, secondNum);
+  visor.innerHTML = result;
 }
 
 function clearVisor() {
@@ -76,9 +81,10 @@ function clearVisor() {
 }
 
 function clearEverything() {
-  firstNum = 0;
-  secondNum = 0;
+  firstNum = undefined;
+  secondNum = undefined;
   operationToDo = "";
+  result = undefined;
   clearVisor();
 }
 
