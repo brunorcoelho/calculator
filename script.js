@@ -60,6 +60,9 @@ function doOperation() {
   if (result != undefined) {
     return;
   }
+  if (firstNum == undefined) {
+    return;
+  }
   secondNum = parseInt(visor.innerHTML);
   clearVisor();
   result = operate(operationToDo, firstNum, secondNum);
