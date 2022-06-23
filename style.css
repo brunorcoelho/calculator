@@ -27,6 +27,7 @@ body {
   flex-direction: column;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  min-height: 85px;
 }
 .control-buttons {
   margin: 9px 0px 0px 9px;
@@ -49,14 +50,18 @@ body {
   background-color: #30bd44;
 }
 
-.result {
+#result {
   margin: 0;
   align-self: flex-end;
   margin: 0 10px 0px 0;
-  font-size: 50px;
+  font-size: 5vh;
   color: #efefef;
   font-family: "Work Sans", sans-serif;
   font-weight: 200;
+  max-width: 279px;
+  overflow: hidden;
+  word-wrap: break-word;
+  text-align: end;
 }
 
 .calculator-buttons {
