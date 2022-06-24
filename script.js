@@ -6,6 +6,7 @@ const multiplyButton = document.getElementById("multiply");
 const addButton = document.getElementById("add");
 const subtractButton = document.getElementById("subtract");
 const equalsButton = document.getElementById("equals");
+const operations = document.querySelectorAll("button.operation");
 
 let firstNum;
 let secondNum;
@@ -40,6 +41,7 @@ function addToVisor() {
 }
 
 function operationSelect() {
+  this.classList.add("operation-active");
   if (result != undefined) {
     result = undefined;
   }
@@ -86,6 +88,10 @@ function operationSelect() {
 }
 
 function doOperation() {
+  Array.from(operations).forEach((operation) =>
+    operation.classList.remove("operation-active")
+  );
+
   if (result != undefined) {
     return;
   }
