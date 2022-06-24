@@ -27,46 +27,78 @@ function addToVisor() {
     clearEverything();
   }
   var numberToAdd = this.innerHTML;
-  visor.insertAdjacentHTML("beforeend", numberToAdd);
+  if (operationToDo == "") {
+    visor.insertAdjacentHTML("beforeend", numberToAdd);
+    firstNum = parseInt(visor.innerHTML);
+  } else {
+    if (secondNum == undefined) {
+      clearVisor();
+    }
+    visor.insertAdjacentHTML("beforeend", numberToAdd);
+    secondNum = parseInt(visor.innerHTML);
+  }
 }
 
 function operationSelect() {
   if (result != undefined) {
     result = undefined;
   }
-  firstNum = parseInt(visor.innerHTML);
-
-  switch (this.innerHTML) {
-    case "×":
-      operationToDo = "multiply";
-      break;
-    case "+":
-      operationToDo = "add";
-      break;
-    case "-":
-      operationToDo = "subtract";
-      break;
-    case "÷":
-      operationToDo = "divide";
-      break;
-    default:
-      break;
+  if (operationToDo == "") {
+    switch (this.innerHTML) {
+      case "×":
+        operationToDo = "multiply";
+        break;
+      case "+":
+        operationToDo = "add";
+        break;
+      case "-":
+        operationToDo = "subtract";
+        break;
+      case "÷":
+        operationToDo = "divide";
+        break;
+      default:
+        break;
+    }
   }
 
   clearVisor();
+
+  if (firstNum != undefined && secondNum != undefined) {
+    doOperation();
+    switch (this.innerHTML) {
+      case "×":
+        operationToDo = "multiply";
+        break;
+      case "+":
+        operationToDo = "add";
+        break;
+      case "-":
+        operationToDo = "subtract";
+        break;
+      case "÷":
+        operationToDo = "divide";
+        break;
+      default:
+        break;
+    }
+  }
 }
 
 function doOperation() {
   if (result != undefined) {
     return;
   }
-  if (firstNum == undefined) {
+  if (firstNum == undefined || secondNum == undefined) {
     return;
   }
-  secondNum = parseInt(visor.innerHTML);
   clearVisor();
   result = operate(operationToDo, firstNum, secondNum);
   visor.innerHTML = result;
+  firstNum = result;
+  secondNum = undefined;
+  operationToDo = "";
+  result = undefined;
 }
 
 function clearVisor() {
