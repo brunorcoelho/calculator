@@ -93,7 +93,7 @@ function doOperation() {
     return;
   }
   clearVisor();
-  result = operate(operationToDo, firstNum, secondNum);
+  result = Math.round(operate(operationToDo, firstNum, secondNum) * 100) / 100;
   visor.innerHTML = result;
   firstNum = result;
   secondNum = undefined;
